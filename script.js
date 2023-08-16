@@ -10,7 +10,9 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
 let todos = [];
-var currentDate=new Date();
+ var currentDate=new Date().toDateString();
+
+
 // console.log(currentDate);
 
 var year=currentDate.getFullYear();
@@ -38,6 +40,16 @@ var monthinword=monthNames[month];
 // console.log(monthinword);
 
 var todayDate=year+','+day+monthinword;
+function resetTaskList() {
+  todos = [];
+  currentDate = new Date().toDateString();
+
+  // Schedule the next reset after 24 hours (in milliseconds)
+  setTimeout(resetTaskList, 24 * 60 * 60 * 1000);
+}
+
+// Initial scheduling of the reset
+resetTaskList();
 
 
 app.get("/",(req,res)=>{
@@ -46,6 +58,9 @@ res.render("index.ejs",{
     currentdate:todayDate,
     todos:todos,
 });
+
+
+
 });
 app.post("/addTodo", (req, res) => {
     const todoItem = req.body.todoItem;

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List Application</title>
+
+</head>
+<body>
+    <h1>Today <%= currentdate %></h1>
+    <h2>To-do List</h2>
+     <form action="/addTodo" method="POST">
+        <input type="text" name="todoItem" placeholder="Enter a new task">
+        <button type="submit">Add Task</button>
+      </form>
+      
+      <h2>Your To-Do List:</h2>
+      <ul>
+        <% todos.forEach(function(todo, index) { %>
+          <li>
+            <input type="checkbox" name="completed" value="<%= index %>">
+            <%= todo.text %>
+          </li>
+        <% }); %>
+      </ul>
+      
+
+      
+    
+</body>
+
+</html>

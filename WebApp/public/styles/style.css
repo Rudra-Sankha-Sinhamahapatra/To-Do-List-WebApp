@@ -1,18 +1,29 @@
 body {
   background: linear-gradient(
     300deg,
-    #f3fde8,
-    #f94c10,
-    #ffbfbf,
+    #d15f5f,
     #279eff,
     #33bbc5
   );
   background-size: 180% 180%;
-  animation: 5s ease infinite;
+  animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
 }
 
 .heading {
-  background-image: url(/WebApp/public/images/Heading\ img.avif); /* Replace with your image URL */
+  background-image: url('../images/heading.jpeg'); /* Replace with your image URL */
+  background-position: 100% ;
   background-clip: text;
   position: relative;
   color: transparent;
@@ -60,7 +71,8 @@ body {
   color: white;
   justify-content: center;
   text-align: center;
-  background-image: url(/WebApp/public/images/Heading\ img.avif);
+  background-image: url('../images/heading.jpeg');
+  background-position: 120%;
 }
 
 .form {
@@ -83,13 +95,13 @@ ul {
 }
 
 .input {
-  background: url(/WebApp/public/images/Heading\ img.avif);
+  background: url('../images/heading.jpeg');
   background-position: 100%;
   background-size: cover;
 }
 
 .btn {
-  background: url(/WebApp/public/images/Heading\ img.avif);
+  background: url('../images/heading.jpeg');
   background-attachment: local;
   background-clip: content-box;
   background-position: 100%;

@@ -22,8 +22,9 @@ body {
 }
 
 .heading {
-  background-image: url('../images/heading.jpeg'); /* Replace with your image URL */
-  background-position: 100% ;
+  background-image: url('../images/heading.jpeg'); 
+  
+  background-size: cover;
   background-clip: text;
   position: relative;
   color: transparent;
